@@ -75,5 +75,32 @@ Usar `application.properties` junto con la anotación `@Value` es una forma senc
 y efectiva de gestionar la configuración de tu aplicación en Spring Boot. Esto permite mantener las configuraciones
 separadas del código, facilitando su mantenimiento y actualización.
 
+# Propiedades heredadas de Spring Boot
 
+Spring Boot permite configurar el comportamiento de la aplicación mediante propiedades en el archivo
+`application.properties` o `application.yml`. Estas propiedades se dividen en varias categorías:
 
+## Categorías principales:
+
+- **Servidor:** Configuración del servidor embebido (puerto, contexto, etc.)
+- **Base de datos:** Conexión y parámetros de acceso a la base de datos
+- **Seguridad:** Opciones de autenticación y autorización
+- **Registro (logging):** Nivel y formato de logs
+- **Spring:** Configuraciones específicas del framework
+- **Aplicación:** Propiedades personalizadas
+
+Enlace a la documentación oficial para una lista completa de propiedades:
+[Spring Boot Properties](https://docs.spring.io/spring-boot/docs/current/reference/html/application-properties.html)
+
+## Propiedades comunes y ejemplos:
+
+- `server.port=8080` — Cambia el puerto en el que se ejecuta la aplicación
+- `server.servlet.context-path=/miapp` — Define la ruta base de la aplicación
+- `spring.datasource.url=jdbc:mysql://localhost:3306/mi_db` — Configura la URL de la base de datos
+- `spring.datasource.username=usuario` — Usuario de la base de datos
+- `spring.datasource.password=contraseña` — Contraseña de la base de datos
+- `logging.level.org.springframework=INFO` — Nivel de log para Spring
+- `spring.application.name=miaplicacion` — Nombre de la aplicación
+
+Estas propiedades permiten personalizar el entorno de ejecución sin modificar el código fuente, facilitando la gestión y
+el despliegue en diferentes entornos.
