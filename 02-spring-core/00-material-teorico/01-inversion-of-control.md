@@ -61,7 +61,7 @@ y la Inyección de Dependencias de manera automática y eficiente.
 Para más información, consulta la documentación oficial de Spring:
 
 - [Inyección de Dependencias (Spring Framework)](https://docs.spring.io/spring-framework/reference/core/beans/dependencies.html)
-- [Contenedor de Spring (Spring Container)](https://docs.spring.io/spring-framework/reference/core/beans/beans.html)
+- [Contenedor de Spring (Spring Container)](https://docs.spring.io/spring-framework/reference/core/beans/basics.html)
 
 ---
 
