@@ -9,6 +9,16 @@ Sirven para:
 - Permitir una inyección de dependencias precisa y controlada.
 - Mejorar la legibilidad y mantenibilidad del código al dejar explícito qué implementación se está utilizando.
 
+## ¿Qué error arroja Spring si no puede decidir qué Bean inyectar?
+
+Cuando existen múltiples beans del mismo tipo y no se utiliza `@Qualifier` para especificar cuál debe inyectarse, Spring arroja una excepción en tiempo de ejecución:
+
+```
+org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'com.ejemplo.Notificador' available: expected single matching bean but found 2: emailNotificador,smsNotificador
+```
+
+Este error indica que Spring encontró más de un bean candidato y no puede decidir cuál inyectar automáticamente.
+
 ## ¿Cuándo utilizarlos?
 
 Debes utilizar `@Qualifier` cuando:
