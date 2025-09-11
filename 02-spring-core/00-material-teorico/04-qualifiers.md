@@ -121,5 +121,4 @@ En este ejemplo, el bean `smsNotificador` se inyecta mediante un método setter,
 
 ### Documentación oficial
 
-- [Spring Framework - @Qualifier](https://docs.spring.io/spring-framework/reference/core/beans/dependencies/fine-tuning.html#beans-autowired-annotation)
-- [Spring Boot - Dependency Injection](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.developing-auto-configuration-beans)
+- [Spring Framework - @Qualifier](https://docs.spring.io/spring-framework/reference/core/beans/annotation-config/autowired-qualifiers.html)
