@@ -73,6 +73,5 @@ app.setLazyInitialization(true);
 - Si necesitas detectar errores de configuración al inicio.
 
 ## Documentación oficial
-- [Spring Framework - Lazy Initialization](https://docs.spring.io/spring-framework/reference/core/beans/factory-lazy-init.html)
-- [Spring Boot - Lazy Initialization](https://docs.spring.io/spring-boot/docs/current/reference/html/features.html#features.lazy-initialization)
+- [Spring Framework - Lazy Initialization](https://docs.spring.io/spring-framework/reference/core/beans/dependencies/factory-lazy-init.html)
 
