@@ -31,9 +31,9 @@ El ciclo de vida de un Bean en Spring define las distintas etapas por las que pa
 graph TD;
     A[Instanciación] --> B[Inyección de dependencias];
     B --> C[Configuración de propiedades];
-    C --> D[Inicialización (@PostConstruct, afterPropertiesSet, método personalizado)];
+    C --> D["Inicialización (@PostConstruct, afterPropertiesSet, método personalizado)"];
     D --> E[Bean listo para usar];
-    E --> F[Destrucción (@PreDestroy, destroy, método personalizado)];
+    E --> F["Destrucción (@PreDestroy, destroy, método personalizado)"];
 ```
 
 ## Ejemplo práctico
