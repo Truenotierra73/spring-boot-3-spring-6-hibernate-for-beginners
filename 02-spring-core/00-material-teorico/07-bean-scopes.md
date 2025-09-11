@@ -6,29 +6,14 @@ El **ámbito de un Bean** (Bean Scope) en Spring define el ciclo de vida y la vi
 
 Spring proporciona varios tipos de ámbitos para los beans:
 
-### 1. Singleton (por defecto)
-- **Descripción:** Solo se crea una única instancia del bean para todo el contenedor de Spring. Todos los requests al bean retornan la misma instancia.
-- **Uso típico:** Beans sin estado compartido.
-
-### 2. Prototype
-- **Descripción:** Se crea una nueva instancia del bean cada vez que se solicita al contenedor.
-- **Uso típico:** Beans con estado o que requieren ser independientes.
-
-### 3. Request (solo aplicaciones web)
-- **Descripción:** Se crea una nueva instancia del bean para cada request HTTP.
-- **Uso típico:** Beans que mantienen información específica de una petición web.
-
-### 4. Session (solo aplicaciones web)
-- **Descripción:** Se crea una nueva instancia del bean para cada sesión HTTP.
-- **Uso típico:** Beans que mantienen información específica de una sesión de usuario.
-
-### 5. Application (solo aplicaciones web)
-- **Descripción:** Una única instancia del bean por contexto de aplicación web (ServletContext).
-- **Uso típico:** Beans que comparten información a nivel de aplicación web.
-
-### 6. Websocket (solo aplicaciones web)
-- **Descripción:** Una instancia del bean por cada sesión de WebSocket.
-- **Uso típico:** Beans que mantienen información específica de una sesión WebSocket.
+| Ámbito         | Descripción                                                                                                                                            | Uso típico                                                        |
+|----------------|--------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------|
+| **Singleton**  | Solo se crea una única instancia del bean para todo el contenedor de Spring. Todos los requests al bean retornan la misma instancia. **(Por defecto)** | Beans sin estado compartido.                                      |
+| **Prototype**  | Se crea una nueva instancia del bean cada vez que se solicita al contenedor.                                                                           | Beans con estado o que requieren ser independientes.              |
+| **Request**    | Se crea una nueva instancia del bean para cada request HTTP. **(Solo aplicaciones web)**                                                               | Beans que mantienen información específica de una petición web.    |
+| **Session**    | Se crea una nueva instancia del bean para cada sesión HTTP. **(Solo aplicaciones web)**                                                                | Beans que mantienen información específica de una sesión de usuario. |
+| **Application**| Una única instancia del bean por contexto de aplicación web (ServletContext). **(Solo aplicaciones web)**                                              | Beans que comparten información a nivel de aplicación web.         |
+| **Websocket**  | Una instancia del bean por cada sesión de WebSocket. **(Solo aplicaciones web)**                                                                       | Beans que mantienen información específica de una sesión WebSocket.|
 
 ## Cómo cambiar el ámbito de un Bean
 El ámbito de un bean se puede cambiar de las siguientes formas:
