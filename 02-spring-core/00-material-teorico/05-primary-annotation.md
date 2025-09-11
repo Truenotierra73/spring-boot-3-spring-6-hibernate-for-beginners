@@ -85,6 +85,6 @@ public class MensajeriaService {
 
 ### Documentación oficial
 
-- [Spring Framework - @Primary](https://docs.spring.io/spring-framework/reference/core/beans/dependencies/fine-tuning.html#beans-primary)
-- [Spring Framework - @Qualifier](https://docs.spring.io/spring-framework/reference/core/beans/dependencies/fine-tuning.html#beans-autowired-annotation)
+- [Spring Framework - @Primary](https://docs.spring.io/spring-framework/reference/core/beans/annotation-config/autowired-primary.html)
+- [Spring Framework - @Qualifier](https://docs.spring.io/spring-framework/reference/core/beans/annotation-config/autowired-qualifiers.html)
 
