@@ -107,4 +107,4 @@ Spring proporciona varios ganchos (hooks) que permiten ejecutar lógica personal
 > - Los métodos personalizados son útiles cuando se necesita flexibilidad adicional en la configuración XML o JavaConfig.
 
 ## Referencias
-- [Documentación oficial de Spring: Bean Lifecycle](https://docs.spring.io/spring-framework/reference/core/beans/factory.html#beans-factory-lifecycle)
+- [Documentación oficial de Spring: Bean Lifecycle](https://docs.spring.io/spring-framework/reference/core/beans/factory-nature.html)
