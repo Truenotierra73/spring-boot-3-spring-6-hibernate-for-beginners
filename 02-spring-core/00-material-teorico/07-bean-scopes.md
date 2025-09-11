@@ -92,3 +92,6 @@ public class MiBeanPrototype {
 ```
 
 > **Nota:** Los ámbitos `request`, `session`, `application` y `websocket` solo están disponibles en aplicaciones web Spring.
+
+## Referencias
+- [Spring Framework - Bean Scopes](https://docs.spring.io/spring-framework/reference/core/beans/factory-scopes.html)
