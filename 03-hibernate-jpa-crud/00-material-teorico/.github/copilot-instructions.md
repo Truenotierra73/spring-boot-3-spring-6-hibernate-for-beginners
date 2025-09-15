@@ -1,0 +1,9 @@
+- Utiliza Java 17 o superior.
+- Utiliza Spring Boot 3 y Spring 6.
+- Utiliza Maven como sistema de construcción.
+- Utiliza buenas prácticas de programación.
+- Utiliza patrones de diseño cuando sea apropiado.
+- Escribe código limpio y mantenible.
+- Idioma de los comentarios: Español.
+- Utiliza Hibernate / JPA para la persistencia de datos.
+- Utiliza MySQL 9.4 como base de datos.
