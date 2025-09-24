@@ -82,10 +82,40 @@ flowchart LR
 
 ---
 
+## Configuración de JDBC en Spring Boot
+
+En una aplicación Spring Boot, la configuración de JDBC se realiza principalmente en el archivo `application.properties` o `application.yml`. Aquí se definen los parámetros de conexión a la base de datos, el driver JDBC y otras propiedades relevantes. Spring Boot autoconfigura el DataSource y gestiona la conexión.
+
+### Ejemplo de configuración en `application.properties` para MySQL 9.4
+
+```properties
+# Configuración de la URL de conexión JDBC
+spring.datasource.url=jdbc:mysql://localhost:3306/mi_base_de_datos?useSSL=false&serverTimezone=UTC
+
+# Usuario y contraseña de la base de datos
+spring.datasource.username=usuario
+spring.datasource.password=contraseña
+
+# Driver JDBC de MySQL
+spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
+
+# Dialecto de Hibernate para MySQL
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQLDialect
+
+# Mostrar SQL generado por Hibernate
+spring.jpa.show-sql=true
+
+# Estrategia de creación de tablas
+spring.jpa.hibernate.ddl-auto=update
+```
+
+Con esta configuración, Spring Boot crea automáticamente el DataSource y gestiona la conexión JDBC, permitiendo el uso de JPA/Hibernate para la persistencia de datos.
+
+---
+
 ## Referencias
 - [Documentación oficial de Hibernate](https://hibernate.org/orm/documentation/)
 - [Documentación oficial de JPA (Jakarta Persistence)](https://jakarta.ee/specifications/persistence/)
 - [¿Qué es un ORM?](https://es.wikipedia.org/wiki/Mapeo_objeto-relacional)
 - [JDBC en Oracle](https://docs.oracle.com/javase/tutorial/jdbc/overview/index.html)
 - [Spring Data JPA](https://spring.io/projects/spring-data-jpa)
-
