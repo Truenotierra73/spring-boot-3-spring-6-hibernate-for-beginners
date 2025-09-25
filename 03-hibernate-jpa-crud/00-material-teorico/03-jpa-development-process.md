@@ -145,7 +145,18 @@ Las anotaciones JPA permiten mapear clases Java a tablas de la base de datos y d
         // ...otros atributos y métodos...
     }
     ```
-    > **Nota:** Si una clase no está anotada con `@Entity`, JPA no la gestionará ni la mapeará a ninguna tabla en la base de datos.
+    - **Requisitos para que una clase pueda llevar la anotación `@Entity`:**
+      1. **Debe ser una clase pública y concreta** (no abstracta ni interfaz).
+      2. **Debe tener un constructor público sin argumentos** (por defecto o explícito).
+      3. **Debe tener un campo anotado con `@Id`** que actúe como clave primaria.
+      4. **No puede ser una clase final** (para permitir la creación de proxies por parte de JPA/Hibernate).
+      5. **No debe tener métodos o campos estáticos que representen el estado persistente**.
+      6. **Debe tener un identificador único** (el campo `@Id` debe ser único por entidad).
+      7. **Debe estar en un paquete gestionado por el escaneo de entidades de JPA/Spring Boot**.
+      8. **No puede ser una clase interna no estática**.
+
+      > Cumplir estos requisitos garantiza que la clase pueda ser gestionada correctamente por el EntityManager y mapeada a una tabla en la base de datos.
+  > **Nota:** Si una clase no está anotada con `@Entity`, JPA no la gestionará ni la mapeará a ninguna tabla en la base de datos.
 
 - `@Table`
   - **Descripción:**
