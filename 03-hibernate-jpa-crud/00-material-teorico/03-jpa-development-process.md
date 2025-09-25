@@ -120,20 +120,49 @@ Utiliza pruebas unitarias e integrales para asegurar la calidad del código.
 
 Las anotaciones JPA permiten mapear clases Java a tablas de la base de datos y definir relaciones y restricciones. A continuación, se listan las más utilizadas, indicando si es posible especificar un nombre alternativo como parámetro:
 
-- `@Entity`: Marca la clase como una entidad JPA.
-  - **¿Permite nombre alternativo?** Sí, mediante el parámetro `name`.
+- `@Entity`
+  - **Descripción:**
+    La anotación `@Entity` indica que una clase es una entidad JPA, es decir, que su instancia será gestionada por el EntityManager de JPA y se mapeará a una tabla en la base de datos. Cada objeto de la clase representa una fila de la tabla correspondiente.
+    - Permite mapear la clase a una tabla de la base de datos.
+    - Es posible especificar un nombre alternativo para la entidad usando el parámetro `name`, por ejemplo: `@Entity(name = "NombreAlternativo")`. Si no se especifica, el nombre de la entidad será el de la clase.
+    - La clase debe tener un campo anotado con `@Id` que actúe como clave primaria.
+    - El nombre de la tabla, por defecto, será el mismo que el de la clase, pero puede personalizarse con la anotación `@Table`.
+    - Se pueden definir relaciones, restricciones y configuraciones adicionales mediante otras anotaciones JPA.
   - **Ejemplo:**
     ```java
     @Entity(name = "ProductoEntity")
     public class Producto { ... }
     ```
+    ```java
+    // Ejemplo completo
+    import jakarta.persistence.Entity;
+    import jakarta.persistence.Id;
+    
+    @Entity(name = "ClienteEntidad")
+    public class Cliente {
+        @Id
+        private Long id;
+        // ...otros atributos y métodos...
+    }
+    ```
+    > **Nota:** Si una clase no está anotada con `@Entity`, JPA no la gestionará ni la mapeará a ninguna tabla en la base de datos.
 
-- `@Table`: Especifica el nombre de la tabla.
-  - **¿Permite nombre alternativo?** Sí, mediante el parámetro `name`.
+- `@Table`
+  - **Descripción:**
+    La anotación `@Table` se utiliza para indicar el nombre de la tabla de la base de datos a la que se mapeará la entidad JPA. Por defecto, si no se especifica, el nombre de la tabla será el mismo que el de la clase. Permite personalizar el nombre de la tabla y otros aspectos como el esquema, los índices y las restricciones únicas.
+    - Es posible especificar un nombre alternativo para la tabla usando el parámetro `name`, por ejemplo: `@Table(name = "productos")`.
+    - También se pueden definir parámetros adicionales como `schema`, `catalog`, `uniqueConstraints` e `indexes`.
   - **Ejemplo:**
     ```java
     @Table(name = "productos")
+    public class Producto { ... }
     ```
+    ```java
+    // Ejemplo con parámetros adicionales
+    @Table(name = "clientes", schema = "public", uniqueConstraints = {@UniqueConstraint(columnNames = {"email"})})
+    public class Cliente { ... }
+    ```
+    > **Nota:** Si no se utiliza `@Table`, la entidad se mapeará a una tabla con el mismo nombre que la clase por defecto.
 
 - `@Id`: Indica el campo clave primaria.
   - **¿Permite nombre alternativo?** No, esta anotación no admite parámetros de nombre.
