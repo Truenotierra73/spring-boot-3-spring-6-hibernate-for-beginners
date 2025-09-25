@@ -164,15 +164,6 @@ Las anotaciones JPA permiten mapear clases Java a tablas de la base de datos y d
     ```
     > **Nota:** Si no se utiliza `@Table`, la entidad se mapeará a una tabla con el mismo nombre que la clase por defecto.
 
-  > Las anotaciones `@Entity` y `@Table` suelen usarse en conjunto, pero no es obligatorio.
-  > 
-  > `@Entity` es imprescindible para que la clase sea reconocida como entidad JPA y se mapee a una tabla.
-  >
-  > `@Table` es opcional y se utiliza para personalizar el nombre de la tabla y otros detalles (como esquema, índices, restricciones únicas).
-  > Si no se especifica `@Table`, la entidad se mapeará a una tabla cuyo nombre será el de la clase.
-  > 
-  > Por buenas prácticas, se recomienda usar ambas cuando se necesita un nombre de tabla diferente al de la clase o configuraciones adicionales.
-
 - `@Id`: Indica el campo clave primaria.
   - **¿Permite nombre alternativo?** No, esta anotación no admite parámetros de nombre.
   - **Ejemplo:**
@@ -232,6 +223,24 @@ Las anotaciones JPA permiten mapear clases Java a tablas de la base de datos y d
     @Embedded
     private Direccion direccion;
     ```
+
+> Las anotaciones `@Entity` y `@Table` suelen utilizarse en conjunto, pero no es obligatorio.
+>
+> `@Entity` es imprescindible para que la clase sea reconocida como entidad JPA y se mapee a una tabla.
+>
+> `@Table` es opcional y se utiliza para personalizar el nombre de la tabla y otros detalles (como esquema, índices, restricciones únicas).
+> Si no se especifica `@Table`, la entidad se mapeará a una tabla cuyo nombre será el de la clase.
+>
+> Por buenas prácticas, se recomienda usar ambas cuando se necesita un nombre de tabla diferente al de la clase o configuraciones adicionales.
+>
+> **Otras anotaciones que suelen utilizarse en conjunto:**
+>
+> - `@Id` + `@GeneratedValue`: Para definir la clave primaria y su generación automática.
+> - Anotaciones de relación (`@ManyToOne`, `@OneToMany`, `@OneToOne`, `@ManyToMany`) + `@JoinColumn`/`@JoinTable`: Para definir relaciones y columnas de unión.
+> - `@Column` junto con validaciones (`@NotNull`, `@Size`, etc.) o configuraciones adicionales (`@Lob`, `@Enumerated`).
+> - `@Embedded` + `@Embeddable`: Para objetos embebidos.
+>
+> Estas combinaciones permiten definir de forma precisa el mapeo, las relaciones y las restricciones entre las entidades y la base de datos, siguiendo buenas prácticas de desarrollo.
 
 ---
 
