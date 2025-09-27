@@ -4,15 +4,11 @@ La **Inyección de Dependencias (Dependency Injection, DI)** es un principio fun
 con Spring. Permite desacoplar los componentes de una aplicación, facilitando la reutilización, el mantenimiento y las
 pruebas.
 
----
-
 ## ¿Qué es la Inyección de Dependencias?
 
 La inyección de dependencias es un patrón de diseño que consiste en proporcionar a una clase sus dependencias desde el
 exterior, en lugar de que la propia clase las cree o gestione. Así, los objetos no son responsables de instanciar sus
 dependencias, sino que estas les son "inyectadas" por un contenedor externo (en este caso, el contenedor de Spring).
-
----
 
 ## ¿Cómo se realiza en Spring?
 
@@ -68,8 +64,6 @@ formas de realizar la inyección de dependencias en Spring:
       private MiRepositorio repositorio;
   }
   ```
-
----
 
 ## Uso de la anotación `@Autowired`
 
@@ -661,8 +655,6 @@ public class AppConfig {
     }
 }
 ```
-
----
 
 ## Anotaciones principales en Spring
 
